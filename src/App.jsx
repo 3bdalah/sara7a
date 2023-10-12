@@ -30,12 +30,12 @@ function App() {
             </ProtectedRoutes>
           ),
         },
-        {
-          path: "message/:id",
-          element: <SendMessage />,
-        },
         { path: "*", element: <NotFound /> },
       ],
+    },
+    {
+      path: "message/:id",
+      element: <SendMessage />,
     },
   ]);
   return <RouterProvider router={routes}></RouterProvider>;
