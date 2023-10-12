@@ -38,7 +38,9 @@ function App() {
       element: <SendMessage />,
     },
   ]);
-  return <RouterProvider router={routes}></RouterProvider>;
+  return <RouterProvider router={routes}>
+    
+  </RouterProvider>;
 }
 
 export default App;
