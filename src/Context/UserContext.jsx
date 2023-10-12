@@ -1,15 +1,14 @@
 import { createContext, useState } from "react";
 
-export const TokenUser = createContext();
+export const TokenContext = createContext();
+
 // eslint-disable-next-line react/prop-types
-function TokenUserProvider({ children }) {
+export default function TokenContextProvider({ children }) {
   const [token, setToken] = useState(null);
 
   return (
-    <TokenUser.Provider value={{ token, setToken }}>
+    <TokenContext.Provider value={{ token, setToken }}>
       {children}
-    </TokenUser.Provider>
+    </TokenContext.Provider>
   );
 }
-
-export default TokenUserProvider;
