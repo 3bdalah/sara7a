@@ -1,10 +1,20 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { TokenUser } from "../../Context/UserContext.jsx";
+import { TokenContext } from "../../Context/UserContext.jsx";
 import imgs from "../../assets/images/logo300.png";
+
 const Header = () => {
-  let { token, setToken } = useContext(TokenUser);
+  let { token, setToken } = useContext(TokenContext);
   let navigate = useNavigate();
+
+  // Check for the token in local storage when the component mounts
+  useEffect(() => {
+    const userToken = localStorage.getItem("userToken");
+    if (userToken) {
+      setToken(userToken);
+    }
+  }, [setToken]);
+
   function handleLogout() {
     localStorage.removeItem("userToken");
     setToken(null);
