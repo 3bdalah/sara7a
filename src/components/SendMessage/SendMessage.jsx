@@ -1,26 +1,25 @@
 import { useParams } from "react-router-dom";
 import imgS from "../../assets//images/avatar.png";
 import { useFormik } from "formik";
-import axios from "axios";
+// import axios from "axios";
 // import styles from "./SendMessage.module.css";
 import { useState } from "react";
+import { sendMessage } from "../../Redux/MessagesSlice";
+import { useDispatch } from "react-redux";
 
 const SendMessage = () => {
+  const dispatch = useDispatch();
   let idUser = useParams();
   const [send, setSend] = useState(null);
   async function AddNewMessage(values) {
     try {
-      let data = {
-        ...values,
-        receivedId: idUser.id,
-      };
-      let res = await axios.post(
-        "https://sara7aiti.onrender.com/api/v1/message",
-        data
+      dispatch(
+        sendMessage({
+          ...values,
+          receivedId: idUser.id,
+        })
       );
 
-      console.log("data message", res.data);
-      setSend(res.data.messaged);
       setTimeout(() => {
         setSend(null);
       }, 2000);
@@ -40,9 +39,6 @@ const SendMessage = () => {
     },
   });
 
-  // useEffect(() => {
-  //   setSend(send);
-  // }, [send]);
   return (
     <>
       <div className="container text-center py-5 my-5 ">
