@@ -71,7 +71,7 @@ const Profile = () => {
           >
             <img src={imgS} className={styles.avatar} alt="etes" />
           </Link>
-          <h3 className="py-2">Nourhan Saeed</h3>
+          <h3 className="py-2">User Name</h3>
           <button
             data-toggle="modal"
             data-target="#share"

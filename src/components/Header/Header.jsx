@@ -23,33 +23,21 @@ const Header = () => {
 
   return (
     <nav className="navbar navbar-expand-lg bg-custom navbar-dark bg-dark">
-      <div className="container">
+      <div className=" container ">
         <Link className="navbar-brand" to="/">
-          <img src={imgs} width="54" alt="logo-sara7a" />
+          <img src={imgs} width="40" alt="logo-sara7a" />
         </Link>
 
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          Menu <span className="navbar-toggler-icon"></span>
-        </button>
-
-        <div className="" id="navbarSupportedContent">
-          <ul className="navbar-nav ml-auto">
+        <div className=" " id="navbarSupportedContent">
+          <ul className="mb-[0rem]  flex text-slate-100  justify-center ">
             {token ? (
               <>
-                <li className="nav-item">
+                <li className="nav-item mx-4 ">
                   <Link className="nav-link" to={"/profile"}>
                     Profile
                   </Link>
                 </li>
-                <li className="nav-item" onClick={handleLogout}>
+                <li className="nav-item mr-4" onClick={handleLogout}>
                   <Link className="nav-link " to={"/login"}>
                     Logout
                   </Link>
@@ -57,12 +45,12 @@ const Header = () => {
               </>
             ) : (
               <>
-                <li className="nav-item">
+                <li className="nav-item mx-4 ">
                   <Link className="nav-link" to={"/register"}>
                     Register
                   </Link>
-                </li>
-                <li className="nav-item">
+                </li> 
+                <li className="nav-item mr-4">
                   <Link className="nav-link " to={"/login"}>
                     Login
                   </Link>
