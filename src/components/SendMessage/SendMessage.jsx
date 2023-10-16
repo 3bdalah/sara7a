@@ -19,7 +19,7 @@ const SendMessage = () => {
           receivedId: idUser.id,
         })
       );
-
+      setSend("Added");
       setTimeout(() => {
         setSend(null);
       }, 2000);
